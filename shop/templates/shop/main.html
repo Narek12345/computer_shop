@@ -7,5 +7,8 @@
 </head>
 <body>
 	<h1>Computer shop</h1>
+	{% for computer in computers %}
+		<h3>{{ computer }} - {{ computer.computer_id }}</h3>
+	{% endfor %}
 </body>
 </html>
