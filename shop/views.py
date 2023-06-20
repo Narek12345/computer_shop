@@ -1,9 +1,18 @@
+from django.views import generic
 from django.shortcuts import render
+
 from .models import Computer
 
 
-def main(request):
-	computers = Computer.objects.all()
+def index(request):
 
-	context = {'computers': computers}
-	return render(request, 'shop/main.html', context)
+	return render(request, 'shop/index.html')
+
+
+class ComputerListView(generic.ListView):
+	model = Computer
+	paginate_by = 10
+	
+
+class ComputerDetailView(generic.DetailView):
+	model = Computer

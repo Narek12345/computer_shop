@@ -1,0 +1,17 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static 'shop/css/index.css' %}">
+	</head>
+
+
+	<dir>
+		<h2>Список техники:</h2>
+		<ul class="equipment-list">
+			<li><a href="{% url 'shop:computers' %}">Компьютеры</a></li>
+		</ul>
+	</dir>
+
+{% endblock %}

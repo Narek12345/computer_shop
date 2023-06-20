@@ -1,0 +1,37 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static 'shop/css/computer_detail.css' %}">
+	</head>
+
+	<h1>{{ computer.name }}</h1>
+
+	<h2>Цена: {{ computer.price }} рублей</h2>
+	<h2>Категория: {{ computer.category }}</h2>
+	<h2>Гарантия: {{ computer.guarantee }} года</h2>
+	<h2>Страна производитель: {{ computer.producting_country }}</h2>
+	<h2>Описание:</h2>
+	<h3>{{ computer.description }}</h3>
+
+	{% if computer.image %}
+		<img src="{{ computer.image.url }}">
+	{% else %}
+		<img src="{% static 'shop/image/no_pc.webp' %}">
+	{% endif %}
+
+
+	<h2>Характеристики</h2>
+	<dir class="specifications">
+		<ul>
+			<li>ОЗУ: <b>{{ computer.ram }}</b></li>
+			<li>Корпус: <b>{{ computer.case }}</b></li>
+			<li>Процессор: <b>{{ computer.cpu }}</b></li>
+			<li>Видеокарта: <b>{{ computer.video_card }}</b></li>
+			<li>Блок питания: <b>{{ computer.power_supply }}</b></li>
+			<li>Материнская плата: <b>{{ computer.motherboard }}</b></li>
+			<li>Количество вентиляторов: <b>{{ computer.num_fans }}</b></li>
+		</ul>
+	</dir>
+{% endblock %}

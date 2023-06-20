@@ -1,0 +1,13 @@
+body {
+	background-color: #FFE4B5;
+	color: #000080;
+}
+
+.main-link {
+	text-decoration: none;
+}
+
+.contact-link {
+	text-decoration: none;
+	color: red;
+}

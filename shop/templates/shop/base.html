@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>COMPUTER SHOP</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'shop/css/base.css' %}">
+</head>
+<body>
+	<header>
+		<h1>
+			<a href="{% url 'shop:index' %}" class="main-link">COMPUTER SHOP</a>
+		</h1>
+	</header>
+
+	<dir class="content">
+		{% block content %}
+		{% endblock %}
+	</dir>
+	
+	{% block pagination %}
+		{% if is_paginated %}
+			<dir class="pagination">
+				<span class="page-links">
+					{% if page_obj.has_previous %}
+						<a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">предыдущий</a>
+					{% endif %}
+					<span class="page-current">
+						Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+					</span>
+					{% if page_obj.has_next %}
+						<a href="{{ request.path }}?page={{ page_obj.next_page_number }}">следующий</a>
+					{% endif %}
+				</span>
+			</dir>
+		{% endif %}
+	{% endblock %}
+
+	<footer>
+		<hr>
+		<h3>Мои контакты</h3>
+		<b>
+			<p>Мой телеграм: <a href="https://t.me/Narek_76" class="contact-link">Narek_76</a></p>
+			<p>Мой номер телефона: <a href="tel:+79887001838" class="contact-link">+7(988)-700-18-38</a></p>
+			<p>Моя почта: <a href="mailto:narekbayanduryan16@gmail.com" class="contact-link">narekbayanduryan16@gmail.com</a></p>
+		</b>
+	</footer>
+
+</body>
+</html>

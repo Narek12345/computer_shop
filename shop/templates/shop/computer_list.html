@@ -1,0 +1,25 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static 'shop/css/computer_list.css' %}">
+	</head>
+
+	<h1>Компьютеры:</h1>
+
+	{% if computer_list %}
+		<ul>
+			{% for computer in computer_list %}
+				<h2>
+					<li>
+						<b class="b-computer-link"><a href="{{ computer.get_absolute_url }}" class="computers-link">{{ computer }}</a></b> - {{ computer.price }} рублей
+					</li>
+				</h2>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>Простите, но еще никто не добавил комьютеров.</p>
+	{% endif %}
+
+{% endblock %}
