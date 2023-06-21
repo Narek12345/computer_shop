@@ -1,11 +1,11 @@
 from django.views import generic
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 from .models import Computer
 
 
 def index(request):
-
 	return render(request, 'shop/index.html')
 
 
