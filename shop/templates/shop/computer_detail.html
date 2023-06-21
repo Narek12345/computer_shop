@@ -1,5 +1,6 @@
 {% extends 'shop/base.html' %}
 {% load static %}
+{% load thumbnail %}
 
 {% block content %}
 	<head>
@@ -16,9 +17,11 @@
 	<h3>{{ computer.description }}</h3>
 
 	{% if computer.image %}
-		<img src="{{ computer.image.url }}">
+		{% thumbnail computer.image "350x350" crop='center' as im %}
+			<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+		{% endthumbnail %}
 	{% else %}
-		<img src="{% static 'shop/image/no_pc.webp' %}">
+		<img src="{% static 'shop/image/no_pc.jpg' %}">
 	{% endif %}
 
 

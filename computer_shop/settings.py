@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     # My apps:
     'shop',
     'accounts',
+
+    # Other:
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [

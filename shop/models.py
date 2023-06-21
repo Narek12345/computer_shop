@@ -14,14 +14,14 @@ class Computer(models.Model):
     )
 
     COMPUTER_PRODUCING_COUNTRIES = (
-        ('USA', 'USA'),
-        ('China', 'China',),
-        ('Korea', 'Korea',),
-        ('Japan', 'Japan',),
-        ('Russia', 'Russia',),
-        ('Vietnam', 'Vietnam',),
-        ('Germany', 'Germany',),
-        ('Netherlands', 'Netherlands',),
+        ('США', 'USA'),
+        ('Китай', 'China',),
+        ('Корея', 'Korea',),
+        ('Япония', 'Japan',),
+        ('Россия', 'Russia',),
+        ('Вьетнам', 'Vietnam',),
+        ('Германия', 'Germany',),
+        ('Нидерланды', 'Netherlands',),
     )
 
     VIDEO_CARD_LIST = (
