@@ -9,5 +9,7 @@ urlpatterns = [
 	# Выход из аккаунта.
 	path('logout/', views.logout, name='logout'),
 	# Регистрация.
-	path('register', views.register, name='register'),
+	path('register/', views.register, name='register'),
+	# Профиль пользователя.
+	path('profile/', views.profile, name='profile'),
 ]

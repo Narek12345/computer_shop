@@ -13,7 +13,7 @@
 		<h1>
 			<a href="{% url 'shop:index' %}" class="main-link">COMPUTER SHOP</a>
 			{% if user.is_authenticated %}
-        		- <small><small>Добро пожаловать, <a href="">{{ user.username }}</a></small></small>
+        		- <small><small>Добро пожаловать, <a href="{% url 'accounts:profile' %}">{{ user.username }}</a></small></small>
         		- <small><small><a href="{% url 'accounts:logout' %}">выйти</a></small></small>
       		{% else %}
         		- <small><small><a href="{% url 'accounts:register' %}">Зарегестрироваться</a></small></small>

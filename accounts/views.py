@@ -17,3 +17,7 @@ def register(request):
 
 def logout_view(request):
     logout(request)
+
+
+def profile(request):
+    return render(request, 'registration/profile.html')
